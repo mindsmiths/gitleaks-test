@@ -22,10 +22,12 @@ jobs:
         run: >
           git reset --hard ${{ github.event.before }} && git push --force
       - name: Test
+        if: ${{ github.event.before }} == 0000000000000000000000000000000000000000
         run: >
           echo ${{github.event.before}}
-          if [[ "${{github.event.before}}" -eq "0000000000" ]]; then
-            echo "equal"
-          else 
-            echo "not equal"
-          fi
+          echo this is working
+      - name: Test2
+        if: ${{ github.event.before }} != 0000000000000000000000000000000000000000
+        run: >
+          echo ${{github.event.before}}
+          echo this is also working
