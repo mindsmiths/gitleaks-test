@@ -28,6 +28,4 @@ jobs:
           echo this is working
       - name: Test2
         run: >
-          [ "abc" == "abc" ] && echo ${{ github.event.before}} 
-          &&
-          [ "abc" == "abc1" ] && echo hello
+          [ ${{github.event.before}} == "0000000000000000000000000000000000000000" ] && echo ${{ github.event.before}} 
