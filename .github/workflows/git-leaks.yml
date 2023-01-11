@@ -20,5 +20,12 @@ jobs:
       - name: Uncommit secrets
         if: ${{ failure() }}
         run: >
-          echo ${{github.event.before}}
           git reset --hard ${{ github.event.before }} && git push --force
+      - name: Test
+        run: >
+          echo ${{github.event.before}}
+          if [[ "${{github.event.before}}" -eq "0000000000" ]]; then
+            echo "equal"
+          else 
+            echo "not equal"
+          fi
