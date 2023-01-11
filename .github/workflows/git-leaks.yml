@@ -19,6 +19,6 @@ jobs:
           GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE}} # Only required for Organizations, not personal accounts.
       - name: Uncommit secrets
         if: ${{ failure() }}
-        run: 
-        - echo ${{github.event.before}}
-        - git reset --hard ${{ github.event.before }} && git push --force
+        run: >
+          echo ${{github.event.before}}
+          git reset --hard ${{ github.event.before }} && git push --force
