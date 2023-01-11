@@ -31,3 +31,4 @@ jobs:
         run: >
           echo ${{github.event.before}}
           echo this is also working
+          if [[ "a" -eq "a" ]]; then echo hello; fi
