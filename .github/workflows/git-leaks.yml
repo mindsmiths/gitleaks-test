@@ -28,7 +28,5 @@ jobs:
           echo this is working
       - name: Test2
         run: >
-          echo ${{github.event.before}}
-          echo this is also working
-          [ "abc" == "abc" ] && echo hello
+          [ "abc" == "abc" ] && echo ${{ github.event.before}} 
           [ "abc" == "abc1" ] && echo hello
