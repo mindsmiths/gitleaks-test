@@ -29,4 +29,5 @@ jobs:
       - name: Test2
         run: >
           [ "abc" == "abc" ] && echo ${{ github.event.before}} 
+          &&
           [ "abc" == "abc1" ] && echo hello
