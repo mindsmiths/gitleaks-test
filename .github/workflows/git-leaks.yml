@@ -27,8 +27,8 @@ jobs:
           echo ${{github.event.before}}
           echo this is working
       - name: Test2
-        if: ${{ github.event.before }} != '0000000000000000000000000000000000000000'
         run: >
           echo ${{github.event.before}}
           echo this is also working
-          if [[ "a" -eq "a" ]]; then echo hello; fi
+          [ "abc" == "abc" ] && echo hello
+          [ "abc" == "abc1" ] && echo hello
