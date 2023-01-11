@@ -20,7 +20,7 @@ jobs:
       - name: Uncommit secrets
         if: ${{ failure() }}
         run: >
-          if [[ ${{github.event.before}} == "0000000000000000000000000000000000000000" ]]; then echo "Deleting branch ${{github.ref_name}}" && git push origin -d ${{github.ref_name}}; echo "Removing all commits after ${{github.event.before}}" && git reset --hard ${{ github.event.before }} && git push --force ; fi 
+          if [[ ${{github.event.before}} == "0000000000000000000000000000000000000000" ]]; then echo "Deleting branch ${{github.ref_name}}" && git push origin -d ${{github.ref_name}}; else echo "Removing all commits after ${{github.event.before}}" && git reset --hard ${{ github.event.before }} && git push --force ; fi 
       # - name: Test
       #   if: ${{ github.event.before }} == '0000000000000000000000000000000000000000'
       #   run: >
