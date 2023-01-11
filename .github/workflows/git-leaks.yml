@@ -1,6 +1,6 @@
 name: gitleaks
 on:
-  pull_request:
+  pull_request: # I would remove this
   push:
 jobs:
   scan:
