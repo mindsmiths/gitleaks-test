@@ -27,5 +27,5 @@ jobs:
           echo ${{github.event.before}}
           echo this is working
       - name: Test2
-        run: >
-        if [ ${{github.event.before}} == "0000000000000000000000000000000000000000" ]; then  echo ${{ github.event.before}}; fi 
+        run:
+        if [[ ${{github.event.before}} == "0000000000000000000000000000000000000000" ]]; then  echo ${{ github.event.before}}; fi 
